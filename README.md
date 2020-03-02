@@ -12,4 +12,5 @@
     </tr>
 </tbody>
 </table>
+<br/>
 Monitorizacion en Raspberry Pi de Sensores mediante Node-RED, MQTT, InfluxDB, Grafana y Blynk
