@@ -1,6 +1,4 @@
 # MQTT-NodeRED-InfluxDB-Grafana-Blynk
-Monitorizacion en Raspberry Pi de Sensores mediante Node-RED, MQTT, InfluxDB, Grafana y Blynk
-
 <table align="center" style="width: 100%;">
   <tbody>
 <tr>
@@ -14,3 +12,4 @@ Monitorizacion en Raspberry Pi de Sensores mediante Node-RED, MQTT, InfluxDB, Gr
     </tr>
 </tbody>
 </table>
+Monitorizacion en Raspberry Pi de Sensores mediante Node-RED, MQTT, InfluxDB, Grafana y Blynk
