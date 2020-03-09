@@ -1,0 +1,190 @@
+[
+    {
+        "id": "447197b5.9d5fd8",
+        "type": "tab",
+        "label": "BME280 - Comprobación",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e56a624.fef0da",
+        "type": "mqtt in",
+        "z": "447197b5.9d5fd8",
+        "name": "Temperatura",
+        "topic": "BME280/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "ec265140.38e3a"
+            ]
+        ]
+    },
+    {
+        "id": "cacfeb02.072f18",
+        "type": "mqtt in",
+        "z": "447197b5.9d5fd8",
+        "name": "Presión",
+        "topic": "BME280/presion",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "8c4f21cd.986b9"
+            ]
+        ]
+    },
+    {
+        "id": "86fb1885.3d7498",
+        "type": "mqtt in",
+        "z": "447197b5.9d5fd8",
+        "name": "Humedad",
+        "topic": "BME280/humedad",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "b6ef9bad.56c6c8"
+            ]
+        ]
+    },
+    {
+        "id": "ec265140.38e3a",
+        "type": "debug",
+        "z": "447197b5.9d5fd8",
+        "name": "Temperatura",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 550,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8c4f21cd.986b9",
+        "type": "debug",
+        "z": "447197b5.9d5fd8",
+        "name": "Presión",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 540,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b6ef9bad.56c6c8",
+        "type": "debug",
+        "z": "447197b5.9d5fd8",
+        "name": "Humedad",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 540,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "79177877.2f4a38",
+        "type": "debug",
+        "z": "447197b5.9d5fd8",
+        "name": "Temperatura ºF",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 560,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d318ad60.e3852",
+        "type": "mqtt in",
+        "z": "447197b5.9d5fd8",
+        "name": "Altitud",
+        "topic": "BME280/Altitud",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "702d5b73.524454"
+            ]
+        ]
+    },
+    {
+        "id": "702d5b73.524454",
+        "type": "debug",
+        "z": "447197b5.9d5fd8",
+        "name": "Altutud",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 540,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "9b16fabc.8e9638",
+        "type": "mqtt in",
+        "z": "447197b5.9d5fd8",
+        "name": "Temperatura F",
+        "topic": "BME280/temperaturaF",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "79177877.2f4a38"
+            ]
+        ]
+    },
+    {
+        "id": "e4eb2426.5f2e98",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "BME280",
+        "broker": "DIRECCION_IP_SERVIDOR",
+        "port": "1883",
+        "clientid": "Monitoring Casa",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]

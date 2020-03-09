@@ -1,0 +1,226 @@
+[
+    {
+        "id": "bed7d98f.b3b3a8",
+        "type": "tab",
+        "label": "Envío Blynk",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "50736560.961c5c",
+        "type": "mqtt in",
+        "z": "bed7d98f.b3b3a8",
+        "name": "DS18B20",
+        "topic": "temp/DS18B20",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "28e55d3c.fc0932"
+            ]
+        ]
+    },
+    {
+        "id": "28e55d3c.fc0932",
+        "type": "blynk-ws-out-write",
+        "z": "bed7d98f.b3b3a8",
+        "name": "DS18B20",
+        "pin": "1",
+        "pinmode": 0,
+        "client": "825f9f70.e6fd6",
+        "x": 580,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "77ff6a2f.059444",
+        "type": "mqtt in",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Temperatura",
+        "topic": "BME280/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "5cbecbd3.140dc4"
+            ]
+        ]
+    },
+    {
+        "id": "d2e9eae9.e81638",
+        "type": "mqtt in",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Presión",
+        "topic": "BME280/presion",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 250,
+        "y": 400,
+        "wires": [
+            [
+                "2a84ea41.f61d86"
+            ]
+        ]
+    },
+    {
+        "id": "d03138ea.7fa3e8",
+        "type": "mqtt in",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Humedad",
+        "topic": "BME280/humedad",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 260,
+        "y": 460,
+        "wires": [
+            [
+                "36050878.c48b98"
+            ]
+        ]
+    },
+    {
+        "id": "10068826.acb068",
+        "type": "mqtt in",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Altitud",
+        "topic": "BME280/Altitud",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 250,
+        "y": 520,
+        "wires": [
+            [
+                "5f0b9c26.82ae14"
+            ]
+        ]
+    },
+    {
+        "id": "df0f843e.919a48",
+        "type": "mqtt in",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Temperatura F",
+        "topic": "BME280/temperaturaF",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            [
+                "b3c64236.a8bb2"
+            ]
+        ]
+    },
+    {
+        "id": "5cbecbd3.140dc4",
+        "type": "blynk-ws-out-write",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Temperatura",
+        "pin": "2",
+        "pinmode": 0,
+        "client": "825f9f70.e6fd6",
+        "x": 570,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "2a84ea41.f61d86",
+        "type": "blynk-ws-out-write",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Presión",
+        "pin": "4",
+        "pinmode": 0,
+        "client": "825f9f70.e6fd6",
+        "x": 580,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "36050878.c48b98",
+        "type": "blynk-ws-out-write",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Humedad",
+        "pin": "5",
+        "pinmode": 0,
+        "client": "825f9f70.e6fd6",
+        "x": 580,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b3c64236.a8bb2",
+        "type": "blynk-ws-out-write",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Temperatura F",
+        "pin": "3",
+        "pinmode": 0,
+        "client": "825f9f70.e6fd6",
+        "x": 560,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5f0b9c26.82ae14",
+        "type": "blynk-ws-out-write",
+        "z": "bed7d98f.b3b3a8",
+        "name": "Altitud",
+        "pin": "6",
+        "pinmode": 0,
+        "client": "825f9f70.e6fd6",
+        "x": 590,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e4eb2426.5f2e98",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "BME280",
+        "broker": "DIRECCION_IP_SERVIDOR",
+        "port": "1883",
+        "clientid": "Monitoring Casa",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "825f9f70.e6fd6",
+        "type": "blynk-ws-client",
+        "z": "",
+        "name": "Casa",
+        "path": "ws://blynk-cloud.com/websockets",
+        "key": "Auth_Token_BLYNK",
+        "dbg_all": false,
+        "dbg_read": false,
+        "dbg_write": false,
+        "dbg_notify": false,
+        "dbg_mail": false,
+        "dbg_prop": false,
+        "dbg_sync": false,
+        "dbg_bridge": false,
+        "dbg_low": false,
+        "dbg_pins": "",
+        "multi_cmd": false,
+        "proxy_type": "no",
+        "proxy_url": "",
+        "enabled": true
+    }
+]

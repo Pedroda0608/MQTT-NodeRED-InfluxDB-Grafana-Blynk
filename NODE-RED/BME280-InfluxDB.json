@@ -1,0 +1,461 @@
+[
+    {
+        "id": "1446af57.e7be01",
+        "type": "tab",
+        "label": "BME280 - INFLUXDB",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "191bd0c6.95cc5f",
+        "type": "mqtt in",
+        "z": "1446af57.e7be01",
+        "name": "Temperatura",
+        "topic": "BME280/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "4249faf0.d2f6e4"
+            ]
+        ]
+    },
+    {
+        "id": "c82c7b8b.19d8e8",
+        "type": "mqtt in",
+        "z": "1446af57.e7be01",
+        "name": "Presión",
+        "topic": "BME280/presion",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "41834cc0.404964"
+            ]
+        ]
+    },
+    {
+        "id": "1ad4c398.ab2c1c",
+        "type": "mqtt in",
+        "z": "1446af57.e7be01",
+        "name": "Humedad",
+        "topic": "BME280/humedad",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 120,
+        "y": 340,
+        "wires": [
+            [
+                "67c4df7c.a4b53"
+            ]
+        ]
+    },
+    {
+        "id": "fdc4eb3f.f133a8",
+        "type": "mqtt in",
+        "z": "1446af57.e7be01",
+        "name": "Altitud",
+        "topic": "BME280/Altitud",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [
+                "cdb2472a.07ba18"
+            ]
+        ]
+    },
+    {
+        "id": "79e6af40.e6c7d",
+        "type": "influxdb out",
+        "z": "1446af57.e7be01",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "envio temperatura",
+        "measurement": "temperature",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 888,
+        "y": 25,
+        "wires": []
+    },
+    {
+        "id": "e45e9a85.2596b8",
+        "type": "debug",
+        "z": "1446af57.e7be01",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 870,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b03de0df.2e437",
+        "type": "influxdb out",
+        "z": "1446af57.e7be01",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "envio temperatura ºF",
+        "measurement": "temperatureF",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 900,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b8a15d79.7506c",
+        "type": "debug",
+        "z": "1446af57.e7be01",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 870,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a7d47620.0bbef8",
+        "type": "influxdb out",
+        "z": "1446af57.e7be01",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "envio Presión",
+        "measurement": "pressure",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 880,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "95cb446c.757938",
+        "type": "debug",
+        "z": "1446af57.e7be01",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 870,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8dfe0bdf.e0afb8",
+        "type": "influxdb out",
+        "z": "1446af57.e7be01",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "envio Humedad",
+        "measurement": "humidity",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 880,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "11b27905.3a2287",
+        "type": "debug",
+        "z": "1446af57.e7be01",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 870,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c4a2b6b4.dd6258",
+        "type": "influxdb out",
+        "z": "1446af57.e7be01",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "envio Altitud",
+        "measurement": "altitude",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 870,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "2a5b7ef9.fbaa62",
+        "type": "debug",
+        "z": "1446af57.e7be01",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 870,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "59f4b52a.a4deac",
+        "type": "mqtt in",
+        "z": "1446af57.e7be01",
+        "name": "Temperatura F",
+        "topic": "BME280/temperaturaF",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "c0d45c66.43764"
+            ]
+        ]
+    },
+    {
+        "id": "4249faf0.d2f6e4",
+        "type": "moment",
+        "z": "1446af57.e7be01",
+        "name": "Hora",
+        "topic": "hora",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "es_ES",
+        "output": "date",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 290,
+        "y": 60,
+        "wires": [
+            [
+                "b19ffa01.17cf08"
+            ]
+        ]
+    },
+    {
+        "id": "b19ffa01.17cf08",
+        "type": "function",
+        "z": "1446af57.e7be01",
+        "name": "Temperatura",
+        "func": "if \n    (\n        (msg.date >= '00:00:00' && msg.date <= '00:01:59')||\n\n        (msg.date >= '06:00:00' && msg.date <= '06:01:59')|| \n\n        (msg.date >= '12:00:00' && msg.date <= '12:01:59')||\n\n        (msg.date >= '18:00:00' && msg.date <= '18:01:59')\n\n    )\n\n    {\n        var temperature =  (msg.payload);\n        msg.payload = [{\n        sensor: parseFloat(temperature),\n        tipo:\"BME280 habitacion\",\n    }];\n        return msg;  \n     }",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 60,
+        "wires": [
+            [
+                "79e6af40.e6c7d",
+                "e45e9a85.2596b8"
+            ]
+        ]
+    },
+    {
+        "id": "c0d45c66.43764",
+        "type": "moment",
+        "z": "1446af57.e7be01",
+        "name": "Hora",
+        "topic": "hora",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "es_ES",
+        "output": "date",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "c3af7b66.061ba8"
+            ]
+        ]
+    },
+    {
+        "id": "c3af7b66.061ba8",
+        "type": "function",
+        "z": "1446af57.e7be01",
+        "name": "Temperatura ºF",
+        "func": "if \n    (\n        (msg.date >= '00:00:00' && msg.date <= '00:01:59')||\n\n        (msg.date >= '06:00:00' && msg.date <= '06:01:59')|| \n\n        (msg.date >= '12:00:00' && msg.date <= '12:01:59')||\n\n        (msg.date >= '18:00:00' && msg.date <= '18:01:59')\n\n    )\n{\n        var temperatureF =  (msg.payload);\n        msg.payload = [{\n        sensor: parseFloat(temperatureF),\n        tipo:\"BME280 habitacion\",\n    }];\n        return msg;\n     }",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 140,
+        "wires": [
+            [
+                "b03de0df.2e437",
+                "b8a15d79.7506c"
+            ]
+        ]
+    },
+    {
+        "id": "41834cc0.404964",
+        "type": "moment",
+        "z": "1446af57.e7be01",
+        "name": "Hora",
+        "topic": "hora",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "es_ES",
+        "output": "date",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "9b67123e.571"
+            ]
+        ]
+    },
+    {
+        "id": "9b67123e.571",
+        "type": "function",
+        "z": "1446af57.e7be01",
+        "name": "Presión",
+        "func": "if \n    (\n        (msg.date >= '00:00:00' && msg.date <= '00:01:59')||\n\n        (msg.date >= '06:00:00' && msg.date <= '06:01:59')|| \n\n        (msg.date >= '12:00:00' && msg.date <= '12:01:59')||\n\n        (msg.date >= '18:00:00' && msg.date <= '18:01:59')\n\n    )\n\n     {\n        var pressure =  (msg.payload);\n        msg.payload = [{\n        sensor: parseFloat(pressure),\n        tipo:\"BME280 habitacion\",\n    }];\n        return msg;\n     }",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "a7d47620.0bbef8",
+                "95cb446c.757938"
+            ]
+        ]
+    },
+    {
+        "id": "67c4df7c.a4b53",
+        "type": "moment",
+        "z": "1446af57.e7be01",
+        "name": "Hora",
+        "topic": "hora",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "es_ES",
+        "output": "date",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "ed436b7c.77c368"
+            ]
+        ]
+    },
+    {
+        "id": "ed436b7c.77c368",
+        "type": "function",
+        "z": "1446af57.e7be01",
+        "name": "Humedad",
+        "func": "if \n    (\n        (msg.date >= '00:00:00' && msg.date <= '00:01:59')||\n\n        (msg.date >= '06:00:00' && msg.date <= '06:01:59')|| \n\n        (msg.date >= '12:00:00' && msg.date <= '12:01:59')||\n\n        (msg.date >= '18:00:00' && msg.date <= '18:01:59')\n\n    )\n\n    {\n        var humidity =  (msg.payload);\n        msg.payload = [{\n        sensor: parseFloat(humidity),\n        tipo:\"BME280 habitacion\",\n    }];\n        return msg;\n     }",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 340,
+        "wires": [
+            [
+                "8dfe0bdf.e0afb8",
+                "11b27905.3a2287"
+            ]
+        ]
+    },
+    {
+        "id": "cdb2472a.07ba18",
+        "type": "moment",
+        "z": "1446af57.e7be01",
+        "name": "Hora",
+        "topic": "hora",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "es_ES",
+        "output": "date",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 290,
+        "y": 440,
+        "wires": [
+            [
+                "b07631d5.a574d"
+            ]
+        ]
+    },
+    {
+        "id": "b07631d5.a574d",
+        "type": "function",
+        "z": "1446af57.e7be01",
+        "name": "Altitud",
+        "func": "if \n    (\n        (msg.date >= '00:00:00' && msg.date <= '00:01:59')||\n\n        (msg.date >= '06:00:00' && msg.date <= '06:01:59')|| \n\n        (msg.date >= '12:00:00' && msg.date <= '12:01:59')||\n\n        (msg.date >= '18:00:00' && msg.date <= '18:01:59')\n\n    )\n\n        {\n        var altitude =  (msg.payload);\n        msg.payload = [{\n        sensor: parseFloat(altitude),\n        tipo:\"BME280 habitacion\",\n    }];\n        return msg;\n     }",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 530,
+        "y": 440,
+        "wires": [
+            [
+                "c4a2b6b4.dd6258",
+                "2a5b7ef9.fbaa62"
+            ]
+        ]
+    },
+    {
+        "id": "e4eb2426.5f2e98",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "BME280",
+        "broker": "DIRECCION_IP_SERVIDOR",
+        "port": "1883",
+        "clientid": "Monitoring Casa",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "283dc50f.75c2aa",
+        "type": "influxdb",
+        "z": "",
+        "hostname": "DIRECCION_IP_SERVIDOR",
+        "port": "8086",
+        "database": "mydb",
+        "name": "InfluxDB",
+        "usetls": false,
+        "tls": ""
+    }
+]

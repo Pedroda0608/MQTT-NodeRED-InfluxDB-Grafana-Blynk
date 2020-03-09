@@ -1,0 +1,435 @@
+[
+    {
+        "id": "b1040751.739d28",
+        "type": "tab",
+        "label": "Graficas",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bd5e5134.365e4",
+        "type": "mqtt in",
+        "z": "b1040751.739d28",
+        "name": "Temperatura",
+        "topic": "BME280/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 270,
+        "y": 160,
+        "wires": [
+            [
+                "3085fc93.b8a064"
+            ]
+        ]
+    },
+    {
+        "id": "ca3a45e9.3cdfb8",
+        "type": "mqtt in",
+        "z": "b1040751.739d28",
+        "name": "Presión",
+        "topic": "BME280/presion",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 250,
+        "y": 420,
+        "wires": [
+            [
+                "6558f5c4.ea4c3c"
+            ]
+        ]
+    },
+    {
+        "id": "6e412232.dbd9ac",
+        "type": "mqtt in",
+        "z": "b1040751.739d28",
+        "name": "Humedad",
+        "topic": "BME280/humedad",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 260,
+        "y": 500,
+        "wires": [
+            [
+                "1d0a3282.3883cd"
+            ]
+        ]
+    },
+    {
+        "id": "fbfc5ba9.ad6bb8",
+        "type": "mqtt in",
+        "z": "b1040751.739d28",
+        "name": "Altitud",
+        "topic": "BME280/Altitud",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 250,
+        "y": 580,
+        "wires": [
+            [
+                "736d3c44.81bea4"
+            ]
+        ]
+    },
+    {
+        "id": "2f86648d.27cb1c",
+        "type": "ui_text",
+        "z": "b1040751.739d28",
+        "group": "9836d2a.f4f593",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "Fecha y Hora",
+        "label": "Fecha y Hora:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 640,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8b53186d.7daf08",
+        "type": "moment",
+        "z": "b1040751.739d28",
+        "name": "Fecha y Hora",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "DD/MM/YYYY HH:mm:ss",
+        "locale": "es_ES",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 420,
+        "y": 60,
+        "wires": [
+            [
+                "2f86648d.27cb1c"
+            ]
+        ]
+    },
+    {
+        "id": "be4cce35.75746",
+        "type": "inject",
+        "z": "b1040751.739d28",
+        "name": "Reloj",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 250,
+        "y": 60,
+        "wires": [
+            [
+                "8b53186d.7daf08"
+            ]
+        ]
+    },
+    {
+        "id": "64008aa2.da8c24",
+        "type": "mqtt in",
+        "z": "b1040751.739d28",
+        "name": "Temperatura F",
+        "topic": "BME280/temperaturaF",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            [
+                "38f82e8f.20dfa2"
+            ]
+        ]
+    },
+    {
+        "id": "1f3e619b.efe8be",
+        "type": "mqtt in",
+        "z": "b1040751.739d28",
+        "name": "DS18B20",
+        "topic": "temp/DS18B20",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "3085fc93.b8a064"
+            ]
+        ]
+    },
+    {
+        "id": "3085fc93.b8a064",
+        "type": "ui_chart",
+        "z": "b1040751.739d28",
+        "name": "Comparativa ºC",
+        "group": "25ab803e.2dfd3",
+        "order": 1,
+        "width": "25",
+        "height": "5",
+        "label": "Comparativa ºC",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "Sin registro",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "38f82e8f.20dfa2",
+        "type": "ui_chart",
+        "z": "b1040751.739d28",
+        "name": "",
+        "group": "25ab803e.2dfd3",
+        "order": 2,
+        "width": "25",
+        "height": "5",
+        "label": "ºF",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff7f0e",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6558f5c4.ea4c3c",
+        "type": "ui_chart",
+        "z": "b1040751.739d28",
+        "name": "",
+        "group": "25ab803e.2dfd3",
+        "order": 3,
+        "width": "25",
+        "height": "5",
+        "label": "Presión",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff7f0e",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d0a3282.3883cd",
+        "type": "ui_chart",
+        "z": "b1040751.739d28",
+        "name": "",
+        "group": "25ab803e.2dfd3",
+        "order": 5,
+        "width": "25",
+        "height": "5",
+        "label": "Humedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff7f0e",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "736d3c44.81bea4",
+        "type": "ui_chart",
+        "z": "b1040751.739d28",
+        "name": "",
+        "group": "25ab803e.2dfd3",
+        "order": 4,
+        "width": "25",
+        "height": "5",
+        "label": "Altitud",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff7f0e",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4eb2426.5f2e98",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "BME280",
+        "broker": "DIRECCION_IP_SERVIDOR",
+        "port": "1883",
+        "clientid": "Monitoring Casa",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "9836d2a.f4f593",
+        "type": "ui_group",
+        "z": "",
+        "name": "Hora",
+        "tab": "adb04155.14fec",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "25ab803e.2dfd3",
+        "type": "ui_group",
+        "z": "",
+        "name": "Grafica",
+        "tab": "adb04155.14fec",
+        "order": 2,
+        "disp": true,
+        "width": "25",
+        "collapse": false
+    },
+    {
+        "id": "adb04155.14fec",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Graficas",
+        "icon": "fa-area-chart",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    }
+]

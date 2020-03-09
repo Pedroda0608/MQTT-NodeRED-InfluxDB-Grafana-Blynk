@@ -1,0 +1,144 @@
+[
+    {
+        "id": "d79c8c48.af057",
+        "type": "tab",
+        "label": "BME280 - borrado datos",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "faf28324.6caab",
+        "type": "influxdb in",
+        "z": "d79c8c48.af057",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "Borrado Temperatura",
+        "query": "drop measurement temperature;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 560,
+        "y": 160,
+        "wires": [
+            [
+                "9a2f45d6.237478"
+            ]
+        ]
+    },
+    {
+        "id": "8a032f4f.506a2",
+        "type": "inject",
+        "z": "d79c8c48.af057",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 267.99998474121094,
+        "y": 216,
+        "wires": [
+            [
+                "faf28324.6caab",
+                "b899f7b4.225d98",
+                "129502aa.e3a27d",
+                "ed8bc091.6ef8a",
+                "ee21326b.3f42b"
+            ]
+        ]
+    },
+    {
+        "id": "9a2f45d6.237478",
+        "type": "debug",
+        "z": "d79c8c48.af057",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "complete": "payload",
+        "x": 890,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b899f7b4.225d98",
+        "type": "influxdb in",
+        "z": "d79c8c48.af057",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "Borrado Temperatura ºF",
+        "query": "drop measurement temperatureF;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "9a2f45d6.237478"
+            ]
+        ]
+    },
+    {
+        "id": "129502aa.e3a27d",
+        "type": "influxdb in",
+        "z": "d79c8c48.af057",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "Borrado Presión ",
+        "query": "drop measurement pressure;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "9a2f45d6.237478"
+            ]
+        ]
+    },
+    {
+        "id": "ed8bc091.6ef8a",
+        "type": "influxdb in",
+        "z": "d79c8c48.af057",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "Borrado Humedad",
+        "query": "drop measurement humidity;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 550,
+        "y": 340,
+        "wires": [
+            [
+                "9a2f45d6.237478"
+            ]
+        ]
+    },
+    {
+        "id": "ee21326b.3f42b",
+        "type": "influxdb in",
+        "z": "d79c8c48.af057",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "Borrado altitud",
+        "query": "drop measurement altitude;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 540,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "283dc50f.75c2aa",
+        "type": "influxdb",
+        "z": "",
+        "hostname": "DIRECCION_IP_SERVIDOR",
+        "port": "8086",
+        "database": "mydb",
+        "name": "InfluxDB",
+        "usetls": false,
+        "tls": ""
+    }
+]

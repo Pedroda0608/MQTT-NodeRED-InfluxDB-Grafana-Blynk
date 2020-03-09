@@ -1,0 +1,327 @@
+[
+    {
+        "id": "520df7f3.1751d8",
+        "type": "tab",
+        "label": "BME280 - relojes",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "38630df9.0dda32",
+        "type": "mqtt in",
+        "z": "520df7f3.1751d8",
+        "name": "Temperatura",
+        "topic": "BME280/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "28ab7e7.6012882"
+            ]
+        ]
+    },
+    {
+        "id": "3707478.5ece6b8",
+        "type": "mqtt in",
+        "z": "520df7f3.1751d8",
+        "name": "Presión",
+        "topic": "BME280/presion",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 270,
+        "y": 340,
+        "wires": [
+            [
+                "440b8f77.6a37a"
+            ]
+        ]
+    },
+    {
+        "id": "4467ade3.fbfe14",
+        "type": "mqtt in",
+        "z": "520df7f3.1751d8",
+        "name": "Humedad",
+        "topic": "BME280/humedad",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 280,
+        "y": 420,
+        "wires": [
+            [
+                "e61d3541.523fc8"
+            ]
+        ]
+    },
+    {
+        "id": "28ab7e7.6012882",
+        "type": "ui_gauge",
+        "z": "520df7f3.1751d8",
+        "name": "",
+        "group": "ed2fe33c.404b8",
+        "order": 3,
+        "width": "7",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Temperatura (ºC)",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "50",
+        "colors": [
+            "#0080ff",
+            "#00cc33",
+            "#ca3838"
+        ],
+        "seg1": "10",
+        "seg2": "22",
+        "x": 670,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "440b8f77.6a37a",
+        "type": "ui_gauge",
+        "z": "520df7f3.1751d8",
+        "name": "",
+        "group": "ed2fe33c.404b8",
+        "order": 36,
+        "width": "7",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Presión Atm. (hPa)",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": "900",
+        "max": "980",
+        "colors": [
+            "#0080ff",
+            "#00cc33",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 670,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e61d3541.523fc8",
+        "type": "ui_gauge",
+        "z": "520df7f3.1751d8",
+        "name": "",
+        "group": "ed2fe33c.404b8",
+        "order": 25,
+        "width": "7",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Humedad (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#0080ff",
+            "#00cc33",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "x": 680,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "14a9f35c.edb5fd",
+        "type": "ui_gauge",
+        "z": "520df7f3.1751d8",
+        "name": "",
+        "group": "ed2fe33c.404b8",
+        "order": 14,
+        "width": "7",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Temperatura (ºF)",
+        "label": "ºF",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "125",
+        "colors": [
+            "#0080ff",
+            "#00cc33",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "70",
+        "x": 670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d0715a10.cfde08",
+        "type": "mqtt in",
+        "z": "520df7f3.1751d8",
+        "name": "Altitud",
+        "topic": "BME280/Altitud",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 270,
+        "y": 500,
+        "wires": [
+            [
+                "de955f04.5f983"
+            ]
+        ]
+    },
+    {
+        "id": "de955f04.5f983",
+        "type": "ui_gauge",
+        "z": "520df7f3.1751d8",
+        "name": "",
+        "group": "ed2fe33c.404b8",
+        "order": 47,
+        "width": "7",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Altitud (m)",
+        "label": "m",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "1000",
+        "colors": [
+            "#0080ff",
+            "#00cc33",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "109353a2.322a2c",
+        "type": "ui_text",
+        "z": "520df7f3.1751d8",
+        "group": "ed2fe33c.404b8",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "name": "Fecha y Hora",
+        "label": "Fecha y Hora:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 660,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "7250ec7a.23ca34",
+        "type": "moment",
+        "z": "520df7f3.1751d8",
+        "name": "Fecha y Hora",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "DD/MM/YYYY HH:mm:ss",
+        "locale": "es_ES",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 440,
+        "y": 80,
+        "wires": [
+            [
+                "109353a2.322a2c"
+            ]
+        ]
+    },
+    {
+        "id": "b53c2af5.5845d8",
+        "type": "inject",
+        "z": "520df7f3.1751d8",
+        "name": "Reloj",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 270,
+        "y": 80,
+        "wires": [
+            [
+                "7250ec7a.23ca34"
+            ]
+        ]
+    },
+    {
+        "id": "c3677ddd.38152",
+        "type": "mqtt in",
+        "z": "520df7f3.1751d8",
+        "name": "Temperatura F",
+        "topic": "BME280/temperaturaF",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "14a9f35c.edb5fd"
+            ]
+        ]
+    },
+    {
+        "id": "e4eb2426.5f2e98",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "BME280",
+        "broker": "DIRECCION_IP_SERVIDOR",
+        "port": "1883",
+        "clientid": "Monitoring Casa",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ed2fe33c.404b8",
+        "type": "ui_group",
+        "z": "",
+        "name": "BME280",
+        "tab": "cde41969.73baf8",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false
+    },
+    {
+        "id": "cde41969.73baf8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Cocina",
+        "icon": "fa-thermometer-three-quarters",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]

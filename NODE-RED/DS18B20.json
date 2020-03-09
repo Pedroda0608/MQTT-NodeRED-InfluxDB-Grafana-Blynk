@@ -1,0 +1,402 @@
+[
+    {
+        "id": "a3ea0064.4a87",
+        "type": "tab",
+        "label": "DS18B20",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "be82dee2.be549",
+        "type": "influxdb out",
+        "z": "a3ea0064.4a87",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "envio temperatura",
+        "measurement": "ds18b20",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 850,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d6205c0a.12524",
+        "type": "debug",
+        "z": "a3ea0064.4a87",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 830,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "720ccc35.eae8a4",
+        "type": "influxdb in",
+        "z": "a3ea0064.4a87",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "select * from ds18b20",
+        "query": "select ds18b20 from ds18b20;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 500,
+        "y": 300,
+        "wires": [
+            [
+                "5a6470d6.27fe6"
+            ]
+        ]
+    },
+    {
+        "id": "42a995cd.c8065c",
+        "type": "inject",
+        "z": "a3ea0064.4a87",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 220,
+        "y": 300,
+        "wires": [
+            [
+                "720ccc35.eae8a4"
+            ]
+        ]
+    },
+    {
+        "id": "5a6470d6.27fe6",
+        "type": "debug",
+        "z": "a3ea0064.4a87",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 830,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f70a9bdf.97dac8",
+        "type": "mqtt in",
+        "z": "a3ea0064.4a87",
+        "name": "DS18B20",
+        "topic": "temp/DS18B20",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e4eb2426.5f2e98",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "681d5200.91d95",
+                "ea059e02.55539"
+            ]
+        ]
+    },
+    {
+        "id": "43aeaf35.35fba",
+        "type": "influxdb in",
+        "z": "a3ea0064.4a87",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "drop measurements",
+        "query": "drop measurement ds18b20;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 512,
+        "y": 140.55560302734375,
+        "wires": [
+            [
+                "837f0fb2.44103"
+            ]
+        ]
+    },
+    {
+        "id": "18324aea.f08a55",
+        "type": "inject",
+        "z": "a3ea0064.4a87",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 219.99998474121094,
+        "y": 196.55560302734375,
+        "wires": [
+            [
+                "43aeaf35.35fba",
+                "28e001a3.47544e"
+            ]
+        ]
+    },
+    {
+        "id": "837f0fb2.44103",
+        "type": "debug",
+        "z": "a3ea0064.4a87",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "complete": "payload",
+        "x": 830,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "46d987bb.e24538",
+        "type": "function",
+        "z": "a3ea0064.4a87",
+        "name": "print datetime",
+        "func": "var d = new Date();\n\nmsg = { payload:Date() } ;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 618.826416015625,
+        "y": 217.607666015625,
+        "wires": [
+            [
+                "bf01e0f5.8f129"
+            ]
+        ]
+    },
+    {
+        "id": "bf01e0f5.8f129",
+        "type": "debug",
+        "z": "a3ea0064.4a87",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 810,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "28e001a3.47544e",
+        "type": "trigger",
+        "z": "a3ea0064.4a87",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "name": "",
+        "x": 442.82623291015625,
+        "y": 220.11114501953125,
+        "wires": [
+            [
+                "46d987bb.e24538"
+            ]
+        ]
+    },
+    {
+        "id": "681d5200.91d95",
+        "type": "ui_gauge",
+        "z": "a3ea0064.4a87",
+        "name": "DS18B20",
+        "group": "96db18c.6d002e8",
+        "order": 3,
+        "width": "7",
+        "height": "7",
+        "gtype": "gage",
+        "title": "Habitación",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "50",
+        "colors": [
+            "#0080ff",
+            "#00cc33",
+            "#ca3838"
+        ],
+        "seg1": "10",
+        "seg2": "22",
+        "x": 500,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "2fd575aa.d42e7a",
+        "type": "ui_text",
+        "z": "a3ea0064.4a87",
+        "group": "96db18c.6d002e8",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "name": "Fecha y Hora",
+        "label": "Fecha y Hora:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 740,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "f86508d4.044be8",
+        "type": "moment",
+        "z": "a3ea0064.4a87",
+        "name": "Fecha y Hora",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "DD/MM/YYYY HH:mm:ss",
+        "locale": "es_ES",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 520,
+        "y": 60,
+        "wires": [
+            [
+                "2fd575aa.d42e7a"
+            ]
+        ]
+    },
+    {
+        "id": "292949fe.099576",
+        "type": "inject",
+        "z": "a3ea0064.4a87",
+        "name": "Reloj",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "f86508d4.044be8"
+            ]
+        ]
+    },
+    {
+        "id": "ea059e02.55539",
+        "type": "moment",
+        "z": "a3ea0064.4a87",
+        "name": "Hora",
+        "topic": "hora",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "es_ES",
+        "output": "date",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 450,
+        "y": 500,
+        "wires": [
+            [
+                "dacdf701.aa0518",
+                "c7bdd435.91f9d8"
+            ]
+        ]
+    },
+    {
+        "id": "dacdf701.aa0518",
+        "type": "function",
+        "z": "a3ea0064.4a87",
+        "name": "DS18B20",
+        "func": "if \n    (\n        (msg.date >= '00:00:00' && msg.date <= '00:01:59')||\n\n        (msg.date >= '06:00:00' && msg.date <= '06:01:59')|| \n\n        (msg.date >= '12:00:00' && msg.date <= '12:01:59')||\n\n        (msg.date >= '18:00:00' && msg.date <= '18:01:59')\n\n    )\n\n    {\n        var ds18b20 =  (msg.payload);\n        msg.payload = [{\n        ds18b20: parseFloat(ds18b20),\n        tipo:\"DS18B20 habitacion\",\n    }];\n        return msg;\n     }",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 620,
+        "y": 460,
+        "wires": [
+            [
+                "be82dee2.be549",
+                "d6205c0a.12524"
+            ]
+        ]
+    },
+    {
+        "id": "c7bdd435.91f9d8",
+        "type": "debug",
+        "z": "a3ea0064.4a87",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 720,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "283dc50f.75c2aa",
+        "type": "influxdb",
+        "z": "",
+        "hostname": "DIRECCION_IP_SERVIDOR",
+        "port": "8086",
+        "database": "mydb",
+        "name": "InfluxDB",
+        "usetls": false,
+        "tls": ""
+    },
+    {
+        "id": "e4eb2426.5f2e98",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "BME280",
+        "broker": "DIRECCION_IP_SERVIDOR",
+        "port": "1883",
+        "clientid": "Monitoring Casa",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "96db18c.6d002e8",
+        "type": "ui_group",
+        "z": "",
+        "name": "DS18B20",
+        "tab": "ca8eb44e.461f88",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false
+    },
+    {
+        "id": "ca8eb44e.461f88",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Habitación",
+        "icon": "fa-bicycle",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]

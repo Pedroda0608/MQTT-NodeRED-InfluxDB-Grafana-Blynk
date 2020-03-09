@@ -1,0 +1,214 @@
+[
+    {
+        "id": "93d12c93.2a1a7",
+        "type": "tab",
+        "label": "BME280 - Selección datos",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "50489fb4.96879",
+        "type": "influxdb in",
+        "z": "93d12c93.2a1a7",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "select * from temperature",
+        "query": "select sensor from temperature;",
+        "x": 470,
+        "y": 60,
+        "wires": [
+            [
+                "ddc11097.d5bbf"
+            ]
+        ]
+    },
+    {
+        "id": "c6507a9a.1e67f8",
+        "type": "inject",
+        "z": "93d12c93.2a1a7",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 200,
+        "y": 60,
+        "wires": [
+            [
+                "50489fb4.96879"
+            ]
+        ]
+    },
+    {
+        "id": "ddc11097.d5bbf",
+        "type": "debug",
+        "z": "93d12c93.2a1a7",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 810,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "877b5b3a.4cfe38",
+        "type": "influxdb in",
+        "z": "93d12c93.2a1a7",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "select * from temperature ºF",
+        "query": "select sensor from temperatureF;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 480,
+        "y": 120,
+        "wires": [
+            [
+                "ddc11097.d5bbf"
+            ]
+        ]
+    },
+    {
+        "id": "f52c3b5f.378ed8",
+        "type": "inject",
+        "z": "93d12c93.2a1a7",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "877b5b3a.4cfe38"
+            ]
+        ]
+    },
+    {
+        "id": "a2b3e112.ae25f",
+        "type": "influxdb in",
+        "z": "93d12c93.2a1a7",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "select * from Humedad",
+        "query": "select sensor from humidity;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "ddc11097.d5bbf"
+            ]
+        ]
+    },
+    {
+        "id": "1e580ec5.9a8d31",
+        "type": "inject",
+        "z": "93d12c93.2a1a7",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "a2b3e112.ae25f"
+            ]
+        ]
+    },
+    {
+        "id": "1e4a5667.f6484a",
+        "type": "influxdb in",
+        "z": "93d12c93.2a1a7",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "select * from Presión",
+        "query": "select sensor from pressure;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 460,
+        "y": 240,
+        "wires": [
+            [
+                "ddc11097.d5bbf"
+            ]
+        ]
+    },
+    {
+        "id": "9da7d761.4d7a08",
+        "type": "inject",
+        "z": "93d12c93.2a1a7",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 200,
+        "y": 240,
+        "wires": [
+            [
+                "1e4a5667.f6484a"
+            ]
+        ]
+    },
+    {
+        "id": "a199057e.ab7db8",
+        "type": "influxdb in",
+        "z": "93d12c93.2a1a7",
+        "influxdb": "283dc50f.75c2aa",
+        "name": "select * from Altitud",
+        "query": "select sensor from altitude;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "ddc11097.d5bbf"
+            ]
+        ]
+    },
+    {
+        "id": "4913bad7.dcddc4",
+        "type": "inject",
+        "z": "93d12c93.2a1a7",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "a199057e.ab7db8"
+            ]
+        ]
+    },
+    {
+        "id": "283dc50f.75c2aa",
+        "type": "influxdb",
+        "z": "",
+        "hostname": "DIRECCION_IP_SERVIDOR",
+        "port": "8086",
+        "database": "mydb",
+        "name": "InfluxDB",
+        "usetls": false,
+        "tls": ""
+    }
+]
